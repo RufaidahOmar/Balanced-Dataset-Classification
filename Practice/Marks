@@ -1,0 +1,29 @@
+from scipy import stats
+import numpy as np
+
+from random import randint
+
+def prepare_marks():
+
+	with open('marks.csv','w') as f:
+
+		# write header file
+		f.write("math,science,status\n")
+
+		#pass
+		for i in range(2000):
+			math = randint(70,100)
+			science = randint(50,100)
+			status = 1
+
+			f.write("%s,%s,%s\n" % (math, science, status))
+
+		#fail
+		for j in range(2000):
+			math = randint(1,69)
+			science = randint(1,49)
+			status = 0
+
+			f.write("%s,%s,%s\n" % (math, science, status))
+
+prepare_marks()
